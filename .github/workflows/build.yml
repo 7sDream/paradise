@@ -29,7 +29,7 @@ jobs:
           # !! Add your recipes here
           - paradise.yml
           - paradise-nvidia.yml
-          # - paradise-macos.yml # disable due to `wl` akmods install fail
+          - paradise-macos.yml
     steps:
       # copied from wayblueorg/wayblue repo
       - name: Optimize build times
