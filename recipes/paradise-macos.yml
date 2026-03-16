@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: paradise
+name: paradise-macos
 description: Personal OS image based on wayblueorg/niri.
 
 base-image: ghcr.io/wayblueorg/niri
