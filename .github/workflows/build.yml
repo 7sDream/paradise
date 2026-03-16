@@ -90,7 +90,6 @@ jobs:
           image_tag: ${{ env.IMAGE_MAJOR_VERSION }}
           version: ${{ env.IMAGE_MAJOR_VERSION }} # fedora version
           iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_MAJOR_VERSION }}-install.iso
-          web_ui: "true"
           enrollment_password: paradise
       - name: Upload ISO as artifact
         id: iso-upload
