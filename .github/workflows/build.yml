@@ -29,7 +29,7 @@ jobs:
           # !! Add your recipes here
           - paradise.yml
           - paradise-nvidia.yml
-          - paradise-macos.yml
+          # - paradise-macos.yml # disable due to `wl` akmods install fail
     steps:
       # copied from wayblueorg/wayblue repo
       - name: Optimize build times
@@ -56,7 +56,7 @@ jobs:
           registry: "ghcr.io/wayblueorg"
           pubkey: "https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/cosign.pub"
       # the build is fully handled by the reusable github action
-      - name: Build paradise
+      - name: Build paradise image
         uses: blue-build/github-action@v1.11.1
         with:
           recipe: ${{ matrix.recipe }}
@@ -70,3 +70,26 @@ jobs:
           use_cache: false
           retry_push_count: 3
           verify_install: true
+      - name: Build paradise ISO
+        uses: jasonn3/build-container-installer@v1.4.0
+        id: build
+        with:
+          arch: ${{ env.ARCH }}
+          image_name: ${{ env.IMAGE_NAME }}
+          image_repo: ghcr.io/${{ github.repository_owner }}
+          image_tag: ${{ env.IMAGE_MAJOR_VERSION }}
+          version: ${{ env.IMAGE_MAJOR_VERSION }}
+          variant: ${{ env.VARIANT }}
+          iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}.iso
+          enrollment_password: paradise
+      - name: Upload ISO as artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.iso_name }}
+          path: |
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
