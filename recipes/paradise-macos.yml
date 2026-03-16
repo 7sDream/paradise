@@ -11,3 +11,4 @@ modules:
   - type: os-release
     properties:
       VARIANT_ID: paradise-macos
+  - from-file: common/final.yml

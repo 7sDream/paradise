@@ -89,13 +89,14 @@ jobs:
           image_name: ${{ steps.imagename.outputs.lowercase }}
           image_tag: ${{ env.IMAGE_MAJOR_VERSION }}
           version: ${{ env.IMAGE_MAJOR_VERSION }} # fedora version
-          iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_MAJOR_VERSION }}.iso
+          iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_MAJOR_VERSION }}-install.iso
+          web_ui: "true"
           enrollment_password: paradise
       - name: Upload ISO as artifact
         id: iso-upload
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.iso.outputs.iso_name }}
+          name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_MAJOR_VERSION }}-install-iso
           path: |
             ${{ steps.iso.outputs.iso_path }}/${{ steps.iso.outputs.iso_name }}
             ${{ steps.iso.outputs.iso_path }}/${{ steps.iso.outputs.iso_name }}-CHECKSUM
