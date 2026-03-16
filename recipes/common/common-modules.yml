@@ -12,3 +12,6 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+  - type: os-release
+    properties:
+      PRETTY_NAME: Paradise OS (FROM Fedora base-atomic)
