@@ -72,24 +72,23 @@ jobs:
           verify_install: true
       - name: Build paradise ISO
         uses: jasonn3/build-container-installer@v1.4.0
-        id: build
+        id: iso
         with:
           arch: ${{ env.ARCH }}
           image_name: ${{ env.IMAGE_NAME }}
           image_repo: ghcr.io/${{ github.repository_owner }}
           image_tag: ${{ env.IMAGE_MAJOR_VERSION }}
           version: ${{ env.IMAGE_MAJOR_VERSION }}
-          variant: ${{ env.VARIANT }}
           iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}.iso
           enrollment_password: paradise
       - name: Upload ISO as artifact
-        id: upload
+        id: iso-upload
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.build.outputs.iso_name }}
+          name: ${{ steps.iso.outputs.iso_name }}
           path: |
-            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
-            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
+            ${{ steps.iso.outputs.iso_path }}/${{ steps.iso.outputs.iso_name }}
+            ${{ steps.iso.outputs.iso_path }}/${{ steps.iso.outputs.iso_name }}-CHECKSUM
           if-no-files-found: error
           retention-days: 90
           compression-level: 0
