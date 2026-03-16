@@ -14,4 +14,12 @@ modules:
         - firefox-langpacks
   - type: os-release
     properties:
+      ID_LIKE: paradise
+      NAME: paradise
       PRETTY_NAME: Paradise OS (FROM Fedora base-atomic)
+      CPE: cpe:/o:paradise:paradise:43
+      DEFAULT_HOSTNAME: paradise
+      HOME_URL: https://github.com/7sDream/paradise
+      DOCUMENTATION_URL: https://github.com/7sDream/paradise
+      SUPPORT_URL: https://github.com/7sDream/paradise/issue
+      BUG_REPORT_URL: https://github.com/7sDream/paradise/issue
