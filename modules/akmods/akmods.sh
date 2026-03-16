@@ -6,6 +6,7 @@ ENABLE_AKMODS_REPO() {
   # if [[ -n "${akmods_repo}" ]]; then
   #   sed -i 's@enabled=0@enabled=1@g' "${akmods_repo}"
   # fi
+  echo "SKIP ENABLE_AKMODS_REPO"
 }
 
 INSTALL_RPM_FUSION() {
