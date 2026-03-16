@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: files
+    files:
+      - source: system/usr
+        destination: /usr
+      - source: system/etc
+        destination: /etc
+  - type: dnf
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
