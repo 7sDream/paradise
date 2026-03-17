@@ -1,16 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
-  - type: files
-    files:
-      - source: system/usr
-        destination: /usr
-      - source: system/etc
-        destination: /etc
-  - type: dnf
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
   - type: os-release
     properties:
       ID_LIKE: paradise
@@ -22,3 +11,20 @@ modules:
       DOCUMENTATION_URL: https://github.com/7sDream/paradise
       SUPPORT_URL: https://github.com/7sDream/paradise/issue
       BUG_REPORT_URL: https://github.com/7sDream/paradise/issue
+  - type: kargs
+    kargs:
+      - "firmware_class.path=/var/lib/firmware"
+  - type: files
+    files:
+      - source: system/usr
+        destination: /usr
+      - source: system/etc
+        destination: /etc
+  - type: dnf
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+  - type: brew
+    nofile-limits: true
+    brew-analytics: false
