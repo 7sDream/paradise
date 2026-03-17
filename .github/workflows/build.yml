@@ -53,7 +53,7 @@ jobs:
           echo "BASE_IMAGE_NAME=$(echo $BASE_IMAGE | sed 's/.*\/.*\///')" >> $GITHUB_ENV
       - name: Replace variable in recipes
         run: |
-          find recipes -type f -name '*.yml' --exec sed -i 's#%IMAGE_NAME%#${{ env.IMAGE_NAME }}#g' '{}' ';'
+          find recipes -type f -name '*.yml' -exec sed -i 's#%IMAGE_NAME%#${{ env.IMAGE_NAME }}#g' '{}' ';'
       - name: Verify base image
         uses: EyeCantCU/cosign-action/verify@v0.3.0 # v0.3.0
         with:
