@@ -18,4 +18,6 @@ modules:
       cleanup: true
     install:
       packages:
-        - t2linux-config t2linux-scripts t2fanrd
+        - t2linux-config
+        - t2linux-scripts
+        - t2fanrd
