@@ -93,7 +93,7 @@ jobs:
           enrollment_password: paradise
       - name: Upload ISO as artifact
         id: iso-upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_MAJOR_VERSION }}-install-iso
           path: |
