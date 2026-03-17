@@ -29,7 +29,8 @@ jobs:
           # !! Add your recipes here
           - paradise.yml
           - paradise-nvidia.yml
-          - paradise-macos.yml
+          - paradise-mac.yml
+          - paradise-t2mac.yml
     steps:
       # copied from wayblueorg/wayblue repo
       - name: Optimize build times

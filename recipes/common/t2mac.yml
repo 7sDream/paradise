@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        enable:
+          - sharpenedblade/t2linux
+      cleanup: true
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:sharpenedblade:t2linux
+        packages:
+          - kernel
+  - type: dnf
+    repos:
+      copr:
+        enable:
+          - sharpenedblade/t2linux
+      cleanup: true
+    install:
+      packages:
+        - t2linux-config t2linux-scripts t2fanrd

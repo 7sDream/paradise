@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: paradise-macos
+name: paradise-t2mac
 description: Personal OS image based on wayblueorg/niri.
 
 base-image: ghcr.io/wayblueorg/niri
@@ -7,8 +7,8 @@ image-version: 43
 
 modules:
   - from-file: common/common-modules.yml
-  - from-file: common/macos.yml
+  - from-file: common/t2mac.yml
   - type: os-release
     properties:
-      VARIANT_ID: paradise-macos
+      VARIANT_ID: paradise-t2mac
   - from-file: common/final.yml
