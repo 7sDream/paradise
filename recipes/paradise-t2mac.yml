@@ -6,9 +6,6 @@ base-image: ghcr.io/wayblueorg/niri
 image-version: 43
 
 modules:
-  - from-file: common/common-modules.yml
-  - from-file: common/t2mac.yml
-  - type: os-release
-    properties:
-      VARIANT_ID: paradise-t2mac
+  - from-file: common/base.yml
+  - from-file: common/t2linux.yml
   - from-file: common/final.yml

@@ -6,8 +6,5 @@ base-image: ghcr.io/wayblueorg/niri-nvidia
 image-version: 43
 
 modules:
-  - from-file: common/common-modules.yml
-  - type: os-release
-    properties:
-      VARIANT_ID: paradise-nvidia
+  - from-file: common/base.yml
   - from-file: common/final.yml

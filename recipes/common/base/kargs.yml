@@ -1,0 +1,4 @@
+modules:
+  - type: kargs
+    kargs:
+      - "firmware_class.path=/var/lib/firmware" # extra firmware search location

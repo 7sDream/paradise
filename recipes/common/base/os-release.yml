@@ -1,30 +1,15 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
 modules:
   - type: os-release
     properties:
       ID_LIKE: paradise
       NAME: paradise
       PRETTY_NAME: Paradise OS (FROM Fedora base-atomic)
-      CPE_NAME: cpe:/o:paradise:paradise:43
+      CPE_NAME: cpe:/o:7sDream:paradise:43
       DEFAULT_HOSTNAME: paradise
       HOME_URL: https://github.com/7sDream/paradise
       DOCUMENTATION_URL: https://github.com/7sDream/paradise
       SUPPORT_URL: https://github.com/7sDream/paradise/issue
       BUG_REPORT_URL: https://github.com/7sDream/paradise/issue
-  - type: kargs
-    kargs:
-      - "firmware_class.path=/var/lib/firmware"
-  - type: files
-    files:
-      - source: system/usr
-        destination: /usr
-      - source: system/etc
-        destination: /etc
-  - type: dnf
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
-  - type: brew
-    nofile-limits: true
-    brew-analytics: false
+      VARIANT_ID: "%IMAGE_NAME%" # will replaced by image name in github action
