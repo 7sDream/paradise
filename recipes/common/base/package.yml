@@ -4,6 +4,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - plocate
         - fcitx5
         - fcitx5-rime
         - librime-lua
