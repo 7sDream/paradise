@@ -1,6 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
+  - type: script
+    scripts:
+      - cleanupupstream.sh
   - from-file: common/base/os-release.yml
   - from-file: common/base/kargs.yml
+  - from-file: common/base/greetd.yml
   - from-file: common/base/package.yml
   - from-file: common/base/install-brew.yml
+  - type: files
+    files:
+      - source: system
+        destination: /

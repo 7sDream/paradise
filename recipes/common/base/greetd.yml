@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  # remove wayblue installed sddm packages
+  - type: dnf
+    remove:
+      packages:
+        - sddm-wayland-generic
+        - sddm-themes
+        - sddm
+        - qt5-graphicaleffects
+        - qt5-quickcontrols2
+        - qt5-svg
+  - type: dnf
+    install:
+      packages:
+        - greetd
+        - greetd-selinux
+        - tuigreet
+  - type: systemd
+    system:
+      enable:
+        - greetd
+      disable:
+        - sddm-boot # from wayblue
