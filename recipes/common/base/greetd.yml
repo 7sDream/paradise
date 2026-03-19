@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
-
+# remove wayblue installed sddm packages and replace it with greetd and tuigreet
 modules:
-  # remove wayblue installed sddm packages
   - type: dnf
     remove:
       packages:
@@ -11,7 +10,6 @@ modules:
         - qt5-graphicaleffects
         - qt5-quickcontrols2
         - qt5-svg
-  - type: dnf
     install:
       packages:
         - greetd
@@ -19,7 +17,12 @@ modules:
         - tuigreet
   - type: systemd
     system:
-      enable:
+      enabled:
         - greetd
-      disable:
+      disabled:
         - sddm-boot # from wayblue
+  - type: script
+    snippets:
+      - rm -rf /etc/sddm.conf.d # theme config
+      - rm -rf /etc/sddm # sddm-useradd script
+      - rm /usr/lib/systemd/system/sddm-boot.service # sddm-boot service
