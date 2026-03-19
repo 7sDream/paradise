@@ -5,7 +5,8 @@ set -oue pipefail
 exec tuigreet \
     --greeting "Welcome to Paradise..." \
     --time \
-    --remember --remember-user-session \
+    --remember \
     --asterisks \
     --power-shutdown 'poweroff' \
-    --power-reboot 'reboot'
+    --power-reboot 'reboot' \
+    --cmd '/etc/greetd/niri.sh'
