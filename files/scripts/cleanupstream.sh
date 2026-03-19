@@ -1,4 +1,4 @@
-#!/bin/bash env
+#!/usr/bin/env bash
 set -oue pipefail
 
 # Upstream gdm service, not used
