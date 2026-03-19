@@ -2,7 +2,7 @@
 modules:
   - type: script
     scripts:
-      - cleanupupstream.sh
+      - cleanupstream.sh
   - from-file: common/base/os-release.yml
   - from-file: common/base/kargs.yml
   - from-file: common/base/greetd.yml
