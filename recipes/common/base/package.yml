@@ -10,5 +10,6 @@ modules:
         - librime-lua
     remove:
       packages:
+        - ibus
         - firefox
         - firefox-langpacks
