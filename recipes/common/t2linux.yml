@@ -21,3 +21,11 @@ modules:
         - t2linux-config
         - t2linux-scripts
         - t2fanrd
+  - type: kargs
+    kargs:
+      - intel_iommu=on
+      - iommu=pt
+      - pcie_ports=compat
+  - type: script
+    scripts:
+      - t2-audio.sh
