@@ -3,7 +3,7 @@ name: paradise-t2mac
 description: Personal OS image based on wayblueorg/niri.
 
 base-image: ghcr.io/wayblueorg/niri
-image-version: 43
+image-version: 44
 
 modules:
   - from-file: common/base.yml

@@ -6,7 +6,7 @@ modules:
       ID_LIKE: paradise
       NAME: paradise
       PRETTY_NAME: Paradise OS (FROM Fedora base-atomic)
-      CPE_NAME: cpe:/o:7sDream:paradise:43
+      CPE_NAME: cpe:/o:7sDream:paradise:44
       DEFAULT_HOSTNAME: paradise
       HOME_URL: https://github.com/7sDream/paradise
       DOCUMENTATION_URL: https://github.com/7sDream/paradise

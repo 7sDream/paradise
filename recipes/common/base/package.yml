@@ -11,5 +11,5 @@ modules:
     remove:
       packages:
         - ibus
-        - firefox
+        - firefox # Use flatpak instead
         - firefox-langpacks
