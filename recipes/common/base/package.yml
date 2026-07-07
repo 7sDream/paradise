@@ -8,6 +8,7 @@ modules:
         - fcitx5
         - fcitx5-rime
         - librime-lua
+        - podman-compose
     remove:
       packages:
         - ibus
