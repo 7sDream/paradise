@@ -62,7 +62,7 @@ jobs:
           pubkey: "https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/cosign.pub"
       # the build is fully handled by the reusable github action
       - name: Build paradise image
-        uses: blue-build/github-action@v1.11.1
+        uses: blue-build/github-action@v1.12.0
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
