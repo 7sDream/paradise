@@ -86,7 +86,7 @@ jobs:
         with:
           string: ${{ env.IMAGE_NAME }}
       - name: Build paradise ISO
-        uses: jasonn3/build-container-installer@v1.4.0
+        uses: jasonn3/build-container-installer@v1.5.0
         id: iso
         with:
           arch: x86_64 # wait for wayblue to add arm64 support...
