@@ -9,6 +9,10 @@ modules:
         - fcitx5-rime
         - librime-lua
         - podman-compose
+        - chntpw
+        - libayatana-indicator-gtk3
+        - libayatana-ido-gtk3
+        - libayatana-appindicator-gtk3
     remove:
       packages:
         - ibus
